@@ -19,10 +19,10 @@ Route::group(['prefix' => 'admin'], function() {
     Route::get('news/create', 'Admin\NewsController@add');
 });
 
-// 課題4
-Route:get('XXX','Admin\AAAController@bbb');
+// 課題3
+Route::get('XXX','Admin\AAAController@bbb');
 
-// 課題5
+// 課題4
 Route::group(['prefix' => 'admin'], function() {
     Route::get('profile/create', 'Admin\ProfileController@add');
     Route::get('profile/edit', 'Admin\ProfileController@edit');
