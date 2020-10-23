@@ -27,9 +27,17 @@ class ProfileController extends Controller
         
         return redirect('admin/profile/create');
     }
+    
+    public function edit(Request $request)
+    {
+        $profiles=Profile::find($request->id);
+        if(empty($profiles)){
+            abort(404);
+        }
+        return view('admin.profile.edit',['profiles_form'=>$profiles]);
+    }
 
-
-    public function update()
+    public function update(Request $request)
     {
         $this->validate($request,Profile::$rules);
         $profiles=Profile::find($request->id);
@@ -37,8 +45,8 @@ class ProfileController extends Controller
         
         unset($profiles_form['_token']);
         
-        $profiles_form->fill($profiles_form)->save();
+        $profiles->fill($profiles_form)->save();
         
-        return redirect('admin/profile/edit');
+        return redirect('admin/profile/create');
     }
 }
