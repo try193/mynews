@@ -49,10 +49,10 @@ class ProfileController extends Controller
         
         $profiles->fill($profiles_form)->save();
         
-        $profileshistory=new ProfileHistory;
-        $profileshistory->profiles_id=$profiles->id;
-        $profileshistory->edited_at=Carbon::now();
-        $profileshistory->save();
+        $profilehistory=new ProfileHistory;
+        $profilehistory->profile_id=$profiles->id;
+        $profilehistory->edited_at=Carbon::now();
+        $profilehistory->save();
         
         return redirect('admin/profile/create');
     }
