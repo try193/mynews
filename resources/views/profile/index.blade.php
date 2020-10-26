@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="headline col-md-10 mx-auto">
                     <div class="row">
-                        <table>
+                        <table >
                             <tr>
                                 <th>名前：</th><td>{{ str_limit($headline->name, 30) }}</td>
                             </tr>
