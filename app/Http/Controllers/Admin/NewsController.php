@@ -25,8 +25,8 @@ class NewsController extends Controller
         
         // フォームから画像が送信されてきたら、保存して、$news->image_path に画像のパスを保存する
         if(isset($form['image'])){
-            $path=Storage::disk('s3')->putFile('/',$form['image'],'public');
-            $news->image_path=Storage::disk('s3')->url($path);
+            $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
+            $news->image_path = Storage::disk('s3')->url($path);
         }
         else{
             $news->image_path=null;
